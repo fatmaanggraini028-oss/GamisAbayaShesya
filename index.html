@@ -3,31 +3,31 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>E-com Gamis — Tema Biru Elegan</title>
-  <meta name="description" content="Toko online gamis & abaya dengan tema biru elegan. Demo e-commerce statis.">
-  <style> 
+  <title>E-com Gamis — Koleksi Muslimah Elegan</title>
+  <meta name="description" content="Toko online gamis & abaya elegan, warna krem lembut dan desain eksklusif.">
+  <style>
     :root {
-      --blue-main: #0f62fe;
-      --blue-light: #eaf3ff;
-      --blue-dark: #0838b5;
-      --text-dark: #1f2937;
-      --muted: #6b7280;
-      --card: #ffffff;
-      --shadow: 0 6px 20px rgba(15, 98, 254, 0.1);
+      --cream-bg: #faf6f0;
+      --cream-card: #fffaf5;
+      --accent: #c69a63;
+      --accent-dark: #9c7b4a;
+      --text-dark: #3b2f2f;
+      --muted: #7c7065;
+      --shadow: 0 6px 20px rgba(198,154,99,0.15);
       --radius: 14px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
 
     body {
-      background: var(--blue-light);
+      background: var(--cream-bg);
       color: var(--text-dark);
       line-height: 1.6;
     }
 
     /* HEADER */
     header {
-      background: var(--card);
+      background: white;
       box-shadow: var(--shadow);
       padding: 14px 24px;
       display: flex;
@@ -42,11 +42,11 @@
       align-items: center;
       gap: 10px;
       font-weight: 700;
-      color: var(--blue-main);
+      color: var(--accent);
       font-size: 20px;
     }
     .logo span {
-      background: var(--blue-main);
+      background: var(--accent);
       color: #fff;
       padding: 8px 10px;
       border-radius: 10px;
@@ -55,12 +55,12 @@
     .search {
       padding: 8px 12px;
       border-radius: 8px;
-      border: 1px solid #d0d7e2;
+      border: 1px solid #e0d4c5;
       min-width: 220px;
     }
 
     .btn {
-      background: var(--blue-main);
+      background: var(--accent);
       border: none;
       color: #fff;
       padding: 8px 14px;
@@ -69,15 +69,15 @@
       transition: background 0.2s ease;
       font-weight: 600;
     }
-    .btn:hover { background: var(--blue-dark); }
+    .btn:hover { background: var(--accent-dark); }
     .btn.secondary {
       background: transparent;
-      border: 1px solid var(--blue-main);
-      color: var(--blue-main);
+      border: 1px solid var(--accent);
+      color: var(--accent);
     }
 
     .badge {
-      background: #ef4444;
+      background: #d64545;
       color: #fff;
       font-size: 12px;
       border-radius: 999px;
@@ -94,14 +94,14 @@
       display: flex;
       align-items: center;
       gap: 40px;
-      background: linear-gradient(120deg, #f0f7ff, #ffffff);
+      background: var(--cream-card);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       padding: 40px;
     }
     .hero h1 {
       font-size: 32px;
-      color: var(--blue-main);
+      color: var(--accent-dark);
       margin-bottom: 12px;
     }
     .hero p { color: var(--muted); margin-bottom: 16px; }
@@ -109,7 +109,14 @@
     .hero img {
       width: 320px;
       border-radius: var(--radius);
-      box-shadow: 0 8px 24px rgba(15, 98, 254, 0.15);
+      box-shadow: 0 8px 24px rgba(198,154,99,0.2);
+    }
+
+    .desc {
+      text-align: center;
+      max-width: 800px;
+      margin: 40px auto;
+      color: var(--muted);
     }
 
     /* PRODUCT GRID */
@@ -118,7 +125,7 @@
       margin: 0 auto;
       padding: 20px;
     }
-    h2 { font-size: 24px; color: var(--blue-dark); margin-bottom: 16px; }
+    h2 { font-size: 24px; color: var(--accent-dark); margin-bottom: 16px; text-align: center; }
 
     .grid {
       display: grid;
@@ -127,7 +134,7 @@
     }
 
     .card {
-      background: var(--card);
+      background: white;
       border-radius: var(--radius);
       overflow: hidden;
       box-shadow: var(--shadow);
@@ -137,7 +144,7 @@
     }
     .card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 8px 30px rgba(15, 98, 254, 0.2);
+      box-shadow: 0 8px 30px rgba(198,154,99,0.3);
     }
     .card img {
       width: 100%;
@@ -147,14 +154,21 @@
     .card-body { padding: 14px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
     .card h3 { font-size: 17px; margin-bottom: 6px; }
     .muted { color: var(--muted); font-size: 14px; }
-    .price { color: var(--blue-main); font-weight: 700; margin: 8px 0; }
+    .price { color: var(--accent-dark); font-weight: 700; margin: 8px 0; }
 
     footer {
       text-align: center;
       color: var(--muted);
-      padding: 24px;
+      padding: 32px 16px;
       margin-top: 40px;
-      background: #f8fbff;
+      background: #fffaf2;
+      border-top: 1px solid #e9dfd3;
+    }
+    .social a {
+      margin: 0 8px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
     }
 
     /* DRAWER */
@@ -166,7 +180,7 @@
       max-width: 90%;
       background: #fff;
       border-radius: var(--radius);
-      box-shadow: 0 12px 40px rgba(2,6,23,0.2);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
       padding: 18px;
       transform: translateX(120%);
       transition: transform 0.3s ease-in-out;
@@ -210,20 +224,136 @@
   <section class="hero">
     <div class="text">
       <h1>Koleksi Gamis & Abaya Elegan</h1>
-      <p>Bahan premium, warna biru yang memukau. Gratis ongkir untuk wilayah tertentu!</p>
+      <p>Bahan premium, warna lembut, dan desain elegan untuk gaya muslimah modern.</p>
       <button class="btn secondary" onclick="scrollToProducts()">Lihat Produk</button>
     </div>
     <img src="https://images.unsplash.com/photo-1603808033192-082d6919d9b8?auto=format&fit=crop&w=800&q=60" alt="Gamis elegan">
   </section>
+
+  <div class="desc">
+    <p>
+      <strong>E-com Gamis</strong> menghadirkan koleksi eksklusif gamis dan abaya dengan bahan pilihan, 
+      jahitan rapi, dan nuansa warna krem yang lembut. Tampil menawan dan anggun setiap hari.
+    </p>
+  </div>
 
   <div class="container">
     <h2 id="productTitle">Produk Pilihan</h2>
     <div id="products" class="grid"></div>
   </div>
 
-  <footer>© <span id="year"></span> E-com Gamis — Desain Biru Elegan</footer>
+  <footer>
+    <p><strong>Hubungi Kami</strong></p>
+    <p>Email: <a href="mailto:info@ecomgamis.id" style="color:var(--accent)">info@ecomgamis.id</a></p>
+    <div class="social">
+      <a href="#">Instagram</a> |
+      <a href="#">Facebook</a> |
+      <a href="#">TikTok</a>
+    </div>
+    <p style="margin-top:10px;">© <span id="year"></span> E-com Gamis — Elegan dalam Setiap Gaya</p>
+  </footer>
 
   <aside id="drawer" class="drawer">
     <h3 style="margin-bottom:12px;">Keranjang Belanja</h3>
     <div id="cartList"></div>
-    <div style="margin-top:12px;display:flex;justify-content:space-between;align
+    <div style="margin-top:12px;display:flex;justify-content:space-between;align-items:center">
+      <div class="muted">Total:</div>
+      <div id="total" style="font-weight:700;color:var(--accent-dark)">Rp 0</div>
+    </div>
+    <div style="margin-top:12px;display:flex;gap:8px">
+      <button class="btn" id="checkoutBtn">Checkout</button>
+      <button class="btn secondary" id="closeDrawer">Tutup</button>
+    </div>
+  </aside>
+
+  <script>
+    const PRODUCTS = [
+      {id:1,name:'Gamis Satin Zahra',price:379000,color:'Krem Muda',img:'https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=800&q=60'},
+      {id:2,name:'Abaya Silk Madinah',price:525000,color:'Beige Gold',img:'https://images.unsplash.com/photo-1542060748-10c28b62716c?auto=format&fit=crop&w=800&q=60'},
+      {id:3,name:'Gamis Linen Ayla',price:299000,color:'Krem Natural',img:'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=800&q=60'},
+      {id:4,name:'Abaya Dubai Classic',price:610000,color:'Coklat Susu',img:'https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=800&q=60'},
+      {id:5,name:'Gamis Brokat Hana',price:459000,color:'Champagne',img:'https://images.unsplash.com/photo-1617137968427-85924c800a29?auto=format&fit=crop&w=800&q=60'},
+      {id:6,name:'Abaya Modern Aira',price:549000,color:'Krem Gold',img:'https://images.unsplash.com/photo-1624468313569-b3f17850b9be?auto=format&fit=crop&w=800&q=60'}
+    ];
+
+    let cart = {};
+
+    const toRupiah = n => 'Rp ' + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+
+    const productsDiv = document.getElementById('products');
+    PRODUCTS.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <img src="${p.img}" alt="${p.name}">
+        <div class="card-body">
+          <div>
+            <h3>${p.name}</h3>
+            <div class="muted">${p.color}</div>
+            <div class="price">${toRupiah(p.price)}</div>
+          </div>
+          <button class="btn" onclick="addToCart(${p.id})">Tambah ke Keranjang</button>
+        </div>
+      `;
+      productsDiv.appendChild(card);
+    });
+
+    function scrollToProducts() {
+      document.getElementById('productTitle').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function addToCart(id) {
+      const product = PRODUCTS.find(p => p.id === id);
+      if (!cart[id]) cart[id] = { ...product, qty: 1 };
+      else cart[id].qty++;
+      updateCart();
+    }
+
+    const drawer = document.getElementById('drawer');
+    const badge = document.getElementById('badge');
+    const cartList = document.getElementById('cartList');
+    const totalDiv = document.getElementById('total');
+
+    function updateCart() {
+      let total = 0;
+      let qtyAll = 0;
+      cartList.innerHTML = '';
+      Object.values(cart).forEach(item => {
+        total += item.price * item.qty;
+        qtyAll += item.qty;
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `
+          <img src="${item.img}">
+          <div style="flex:1">
+            <div style="font-weight:600">${item.name}</div>
+            <div class="muted" style="font-size:13px">${item.qty} × ${toRupiah(item.price)}</div>
+          </div>
+          <div class="qty">
+            <button class="btn secondary" style="padding:4px 8px" onclick="changeQty(${item.id},-1)">−</button>
+            <span>${item.qty}</span>
+            <button class="btn secondary" style="padding:4px 8px" onclick="changeQty(${item.id},1)">+</button>
+          </div>
+        `;
+        cartList.appendChild(div);
+      });
+      totalDiv.textContent = toRupiah(total);
+      badge.textContent = qtyAll;
+      badge.style.display = qtyAll > 0 ? 'block' : 'none';
+    }
+
+    function changeQty(id, delta) {
+      if (cart[id]) {
+        cart[id].qty += delta;
+        if (cart[id].qty <= 0) delete cart[id];
+        updateCart();
+      }
+    }
+
+    document.getElementById('openCart').onclick = () => drawer.classList.add('open');
+    document.getElementById('closeDrawer').onclick = () => drawer.classList.remove('open');
+    document.getElementById('checkoutBtn').onclick = () => alert('Fitur checkout belum aktif 🙂');
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
