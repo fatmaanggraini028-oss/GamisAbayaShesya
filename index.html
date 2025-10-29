@@ -91,14 +91,25 @@
     .hero {
       max-width: 1200px;
       margin: 40px auto;
-      display: flex; m,.
+      display: flex;
       align-items: center;
       gap: 40px;
-      background: var(--cream-card) url('https://i.ibb.co/Pr6k4DC/floral-bg.jpg') no-repeat right bottom / cover;
+      background: var(--cream-card) url('kumpulan gamis/floral-bg.jpg') no-repeat right bottom / cover;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       padding: 40px;
+      position: relative;
+      overflow: hidden;
     }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 250, 245, 0.6);
+      border-radius: var(--radius);
+    }
+    .hero > * { position: relative; z-index: 1; }
+
     .hero h1 {
       font-size: 34px;
       color: var(--accent-dark);
@@ -230,12 +241,12 @@
 
   <script>
     const PRODUCTS = [
-      {id:1,name:'Gamis Satin Zahra',price:379000,color:'Krem Muda',img:'kumpulan gamis/image1.jpeg'},
-      {id:2,name:'Abaya Silk Madinah',price:525000,color:'Beige Gold',img:'https://i.ibb.co/Sxvy7J3/image2.jpeg'},
-      {id:3,name:'Gamis Linen Ayla',price:299000,color:'Krem Natural',img:'https://i.ibb.co/vzJmWzH/image3.jpeg'},
-      {id:4,name:'Abaya Dubai Classic',price:610000,color:'Coklat Susu',img:'https://i.ibb.co/mtczH6V/image4.jpeg'},
-      {id:5,name:'Gamis Brokat Hana',price:459000,color:'Champagne',img:'https://i.ibb.co/XZXtH7D/image5.jpeg'},
-      {id:6,name:'Abaya Modern Aira',price:549000,color:'Krem Gold',img:'https://i.ibb.co/nC2rj6n/image6.jpeg'}
+      {id:1,name:'Gamis Satin Zahra',price:379000,color:'Krem Muda',img:'kumpulan gamis/gamis1.jpg'},
+      {id:2,name:'Abaya Silk Madinah',price:525000,color:'Beige Gold',img:'kumpulan gamis/gamis2.jpg'},
+      {id:3,name:'Gamis Linen Ayla',price:299000,color:'Krem Natural',img:'kumpulan gamis/gamis3.jpg'},
+      {id:4,name:'Abaya Dubai Classic',price:610000,color:'Coklat Susu',img:'kumpulan gamis/gamis4.jpg'},
+      {id:5,name:'Gamis Brokat Hana',price:459000,color:'Champagne',img:'kumpulan gamis/gamis5.jpg'},
+      {id:6,name:'Abaya Modern Aira',price:549000,color:'Krem Gold',img:'kumpulan gamis/gamis6.jpg'}
     ];
     let cart = {};
     const toRupiah = n => 'Rp ' + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
@@ -245,7 +256,7 @@
       const card = document.createElement('div');
       card.className = 'card';
       card.innerHTML = `
-        <img src="kumpulan gamis/gamis fafa.jpeg" alt="${p.name}">
+        <img src="${p.img}" alt="${p.name}">
         <div class="card-body">
           <div>
             <h3>${p.name}</h3>
@@ -269,13 +280,7 @@
       updateCart();
     }
 
-    const drawer = document.createElement('aside');
-    drawer.id = 'drawer';
-    drawer.style.display = 'none';
-
     const badge = document.getElementById('badge');
-    const totalDiv = document.createElement('div');
-
     function updateCart() {
       let qtyAll = Object.values(cart).reduce((a,c)=>a+c.qty,0);
       badge.textContent = qtyAll;
