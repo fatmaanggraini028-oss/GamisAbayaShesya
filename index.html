@@ -4,142 +4,188 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>E-com Gamis — Koleksi Muslimah Elegan</title>
-  <meta name="description" content="Toko online gamis & abaya elegan dengan nuansa bunga lembut dan warna pastel.">
+  <meta name="description" content="Toko online gamis & abaya elegan dengan nuansa krem lembut dan desain modern.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --accent: #c69a63;
-      --accent-dark: #9c7b4a;
-      --text-dark: #3b2f2f;
-      --muted: #7c7065;
-      --shadow: 0 6px 20px rgba(198,154,99,0.15);
-      --radius: 14px;
+      --cream-bg: #f9f5ef;
+      --cream-light: #fffaf4;
+      --accent: #c6a47e;
+      --accent-dark: #9e805d;
+      --text-dark: #3c2f2f;
+      --muted: #7a6c63;
+      --radius: 16px;
+      --shadow: 0 6px 24px rgba(198,154,99,0.18);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      background: url('bunga.jpeg') no-repeat center top / cover fixed;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, var(--cream-bg), var(--cream-light));
       color: var(--text-dark);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     /* HEADER */
     header {
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.95);
       backdrop-filter: blur(8px);
       box-shadow: var(--shadow);
-      padding: 14px 24px;
+      padding: 16px 32px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
-      z-index: 50;
-      border-radius: 0 0 14px 14px;
+      z-index: 100;
+      animation: slideDown 0.5s ease;
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
     .logo {
       display: flex;
       align-items: center;
       gap: 10px;
       font-weight: 700;
-      color: var(--accent);
-      font-size: 20px;
+      color: var(--accent-dark);
+      font-size: 22px;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 1px;
     }
     .logo span {
       background: var(--accent);
-      color: #fff;
-      padding: 8px 10px;
+      color: white;
+      padding: 8px 12px;
       border-radius: 10px;
+      font-family: 'Poppins', sans-serif;
     }
 
     .search {
-      padding: 8px 12px;
-      border-radius: 8px;
-      border: 1px solid #e0d4c5;
-      min-width: 220px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid #e5d8c5;
+      min-width: 240px;
+      transition: all 0.3s ease;
+    }
+    .search:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(198,154,99,0.15);
     }
 
     .btn {
       background: var(--accent);
       border: none;
-      color: #fff;
-      padding: 8px 14px;
+      color: white;
+      padding: 10px 16px;
       border-radius: 8px;
       cursor: pointer;
-      transition: background 0.2s ease;
       font-weight: 600;
+      transition: all 0.25s ease;
     }
-    .btn:hover { background: var(--accent-dark); }
+    .btn:hover { background: var(--accent-dark); transform: translateY(-2px); }
     .btn.secondary {
       background: transparent;
-      border: 1px solid var(--accent);
+      border: 1.8px solid var(--accent);
       color: var(--accent);
+    }
+    .btn.secondary:hover {
+      background: var(--accent);
+      color: white;
     }
 
     .badge {
-      background: #d64545;
+      background: #e04f4f;
       color: #fff;
       font-size: 12px;
       border-radius: 999px;
-      padding: 3px 7px;
+      padding: 3px 8px;
       position: absolute;
       top: -6px;
-      right: -8px;
+      right: -10px;
     }
 
     /* HERO */
     .hero {
-      max-width: 1200px;
-      margin: 40px auto;
       display: flex;
+      justify-content: center;
       align-items: center;
-      gap: 40px;
-      background: rgba(255,255,255,0.9);
+      gap: 50px;
+      padding: 80px 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: url('bunga.jpeg') center/cover no-repeat;
       border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 40px;
       position: relative;
       overflow: hidden;
+      box-shadow: var(--shadow);
     }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 250, 245, 0.8);
+      backdrop-filter: blur(2px);
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 520px; animation: fadeIn 1s ease; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     .hero h1 {
-      font-size: 34px;
+      font-size: 38px;
       color: var(--accent-dark);
-      margin-bottom: 12px;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 14px;
     }
-    .hero p { color: var(--muted); margin-bottom: 16px; }
-
+    .hero p { color: var(--muted); margin-bottom: 20px; font-size: 15px; }
     .hero img {
-      width: 320px;
+      width: 340px;
       border-radius: var(--radius);
-      box-shadow: 0 8px 24px rgba(198,154,99,0.2);
+      box-shadow: 0 10px 26px rgba(198,154,99,0.25);
+      position: relative;
+      z-index: 1;
+      animation: fadeIn 1.2s ease;
     }
 
+    /* DESCRIPTION */
     .desc {
       text-align: center;
       max-width: 800px;
-      margin: 40px auto;
-      color: var(--muted);
-      background: rgba(255,255,255,0.9);
+      margin: 50px auto;
+      background: rgba(255,255,255,0.85);
       border-radius: var(--radius);
-      padding: 20px;
+      padding: 24px;
       box-shadow: var(--shadow);
+      color: var(--muted);
     }
+    .desc strong { color: var(--accent-dark); }
 
     /* PRODUCT GRID */
     .container {
       max-width: 1200px;
-      margin: 0 auto;
+      margin: 0 auto 60px;
       padding: 20px;
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.95);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
-    h2 { font-size: 24px; color: var(--accent-dark); margin-bottom: 16px; text-align: center; }
+    h2 {
+      font-size: 26px;
+      color: var(--accent-dark);
+      text-align: center;
+      margin-bottom: 24px;
+      font-family: 'Playfair Display', serif;
+    }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 24px;
     }
 
     .card {
@@ -147,44 +193,43 @@
       border-radius: var(--radius);
       overflow: hidden;
       box-shadow: var(--shadow);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      display: flex;
-      flex-direction: column;
+      transition: all 0.3s ease;
     }
     .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 30px rgba(198,154,99,0.3);
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(198,154,99,0.35);
     }
     .card img {
       width: 100%;
-      height: 260px;
+      height: 280px;
       object-fit: cover;
+      transition: transform 0.4s ease;
     }
-    .card-body { padding: 14px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-    .card h3 { font-size: 17px; margin-bottom: 6px; }
+    .card:hover img { transform: scale(1.05); }
+    .card-body { padding: 16px; text-align: center; }
+    .card h3 { font-size: 18px; color: var(--text-dark); }
     .muted { color: var(--muted); font-size: 14px; }
-    .price { color: var(--accent-dark); font-weight: 700; margin: 8px 0; }
+    .price { color: var(--accent-dark); font-weight: 700; margin: 10px 0; font-size: 16px; }
 
     footer {
       text-align: center;
       color: var(--muted);
-      padding: 32px 16px;
-      margin-top: 40px;
-      background: rgba(255,255,255,0.9);
+      padding: 40px 16px;
+      background: var(--cream-light);
       border-top: 1px solid #e9dfd3;
-      border-radius: 14px 14px 0 0;
     }
-    .social a {
-      margin: 0 8px;
-      color: var(--accent);
+    footer a {
+      color: var(--accent-dark);
       text-decoration: none;
       font-weight: 600;
     }
+    .social a { margin: 0 8px; }
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
-      .hero { flex-direction: column; text-align: center; background-position: center; }
+      .hero { flex-direction: column; text-align: center; padding: 60px 20px; }
       .hero img { width: 80%; }
+      .hero-content { max-width: 90%; }
       header { flex-direction: column; gap: 10px; }
     }
   </style>
@@ -202,9 +247,9 @@
   </header>
 
   <section class="hero">
-    <div class="text">
-      <h1>Koleksi Gamis & Abaya Elegan</h1>
-      <p>Temukan koleksi gamis modern dengan sentuhan klasik — bahan lembut, warna pastel, dan nuansa feminin berpadu dalam harmoni keanggunan muslimah.</p>
+    <div class="hero-content">
+      <h1>Koleksi Gamis & Abaya Terbaru</h1>
+      <p>Elegan, lembut, dan modern — temukan busana muslimah yang menghadirkan pesona dan kenyamanan dalam setiap langkahmu.</p>
       <button class="btn secondary" onclick="scrollToProducts()">Lihat Koleksi</button>
     </div>
     <img src="gamisfatma.jpeg" alt="Gamis elegan">
@@ -212,9 +257,8 @@
 
   <div class="desc">
     <p>
-      <strong>E-com Gamis</strong> menghadirkan koleksi eksklusif gamis dan abaya dengan desain elegan,
-      memadukan kenyamanan dan keanggunan untuk setiap kesempatan. Didesain khusus bagi muslimah modern
-      yang ingin tampil lembut, anggun, dan berkelas.
+      <strong>E-com Gamis</strong> menghadirkan koleksi gamis dan abaya eksklusif dengan desain modern dan bahan premium.
+      Dirancang untuk muslimah yang ingin tampil anggun, feminin, dan percaya diri di setiap kesempatan.
     </p>
   </div>
 
@@ -225,7 +269,7 @@
 
   <footer>
     <p><strong>Hubungi Kami</strong></p>
-    <p>Email: <a href="mailto:info@ecomgamis.id" style="color:var(--accent)">info@ecomgamis.id</a></p>
+    <p>Email: <a href="mailto:info@ecomgamis.id">info@ecomgamis.id</a></p>
     <div class="social">
       <a href="#">Instagram</a> |
       <a href="#">Facebook</a> |
@@ -253,11 +297,9 @@
       card.innerHTML = `
         <img src="${p.img}" alt="${p.name}">
         <div class="card-body">
-          <div>
-            <h3>${p.name}</h3>
-            <div class="muted">${p.color}</div>
-            <div class="price">${toRupiah(p.price)}</div>
-          </div>
+          <h3>${p.name}</h3>
+          <div class="muted">${p.color}</div>
+          <div class="price">${toRupiah(p.price)}</div>
           <button class="btn" onclick="addToCart(${p.id})">Tambah ke Keranjang</button>
         </div>
       `;
